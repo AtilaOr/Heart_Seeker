@@ -1,44 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://nimycyaco22j"]
+[gd_scene load_steps=4 format=3 uid="uid://bih3q1kscsuqo"]
 
-[ext_resource type="Script" path="res://world.gd" id="1_ij173"]
-[ext_resource type="PackedScene" uid="uid://bnwwggmcdo8sm" path="res://player.tscn" id="2_cmxan"]
-[ext_resource type="PackedScene" uid="uid://bdx1yhh2hfnfj" path="res://spikes.tscn" id="3_1ov31"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a3b4"]
-size = Vector2(24, 72)
+[ext_resource type="Script" path="res://world.gd" id="1_txxem"]
+[ext_resource type="PackedScene" uid="uid://bnwwggmcdo8sm" path="res://player.tscn" id="2_17snv"]
+[ext_resource type="PackedScene" uid="uid://b618nfcmtw6cl" path="res://level_completed.tscn" id="5_0fa50"]
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_ij173")
+script = ExtResource("1_txxem")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_mask = 0
+[node name="Player" parent="." instance=ExtResource("2_17snv")]
+position = Vector2(1, -1)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(0, 4)
-polygon = PackedVector2Array(0, -4, 16, -4, 16, 80, 16, 124, 56, 124, 80, 132, 96, 132, 96, 116, 112, 116, 112, 132, 112, 153, 128, 153, 128, 132, 176, 132, 184, 116, 208, 116, 216, 108, 248, 100, 264, 100, 264, 116, 280, 148, 304, 148, 304, 124, 304, 72, 304, -4, 320, -4, 320, 176, 0, 176)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
-
-[node name="Player" parent="." instance=ExtResource("2_cmxan")]
-position = Vector2(72, 96)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(244, 36)
-shape = SubResource("RectangleShape2D_8a3b4")
-
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
-offset_left = 232.0
-offset_right = 256.0
-offset_bottom = 72.0
-
-[node name="Spikes" parent="." instance=ExtResource("3_1ov31")]
-position = Vector2(288, 144)
-
-[node name="Spikes2" parent="." instance=ExtResource("3_1ov31")]
-position = Vector2(296, 144)
-
-[node name="Spikes3" parent="." instance=ExtResource("3_1ov31")]
-position = Vector2(120, 149)
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("5_0fa50")]
+visible = false
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
