@@ -2,7 +2,7 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b4wyqtm0naovg"
+uid="uid://coapx01ufothd"
 path="res://.godot/imported/pixel_font.ttf-4d2253b1d4ec33b958bd3aa7293270f0.fontdata"
 
 [deps]
@@ -31,12 +31,7 @@ preload=[{
 "chars": [],
 "glyphs": [],
 "name": "Nova Configuração",
-<<<<<<< HEAD
-"size": Vector2i(6, 0),
-"variation_embolden": 0.0
-=======
 "size": Vector2i(6, 0)
->>>>>>> 4a3595aff76ce21d1a6f73fc73945947f653bded
 }]
 language_support={}
 script_support={}
