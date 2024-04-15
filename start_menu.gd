@@ -4,6 +4,7 @@ extends CenterContainer
 
 
 func _ready():
+	RenderingServer.set_default_clear_color(Color.LIGHT_SLATE_GRAY)
 	start_game_button.grab_focus()
 
 
