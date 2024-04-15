@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://c1mk0sxjhakyh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c2xql"]
@@ -5,6 +6,14 @@ load_path = "res://.godot/imported/white_9slice.png-942cf30b898668fe48c41258ecdf
 
 [resource]
 texture = SubResource("CompressedTexture2D_c2xql")
+=======
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dknocbav3avjn"]
+
+[ext_resource type="Texture2D" uid="uid://dcpdsm8683b70" path="res://white_9slice.png" id="1_fmyxc"]
+
+[resource]
+texture = ExtResource("1_fmyxc")
+>>>>>>> 4a3595aff76ce21d1a6f73fc73945947f653bded
 texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
