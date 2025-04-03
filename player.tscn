@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bnwwggmcdo8sm"]
+[gd_scene load_steps=16 format=3 uid="uid://bnwwggmcdo8sm"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_2g0pt"]
 [ext_resource type="Texture2D" uid="uid://buts7s3oupyaq" path="res://player.png" id="2_my0ly"]
@@ -84,6 +84,9 @@ size = Vector2(8, 21)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlv48"]
 size = Vector2(6, 19)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yaisg"]
+size = Vector2(2, 17)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 floor_constant_speed = true
@@ -96,8 +99,7 @@ movement_data = ExtResource("2_su48h")
 position = Vector2(0, -12)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_yy6yf")
-animation = &"run"
-flip_h = true
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10.5)
@@ -124,4 +126,16 @@ collision_mask = 4
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_mlv48")
 
+[node name="CheckParede" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckParede"]
+position = Vector2(6, -10)
+shape = SubResource("RectangleShape2D_yaisg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CheckParede"]
+position = Vector2(-6, -10)
+shape = SubResource("RectangleShape2D_yaisg")
+
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
+[connection signal="body_entered" from="CheckParede" to="." method="_on_check_parede_body_entered"]
+[connection signal="body_exited" from="CheckParede" to="." method="_on_check_parede_body_exited"]

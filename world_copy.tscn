@@ -1,11 +1,38 @@
-[gd_scene load_steps=10 format=3 uid="uid://5l05kjp4u2vq"]
+[gd_scene load_steps=10 format=3 uid="uid://bj60vtxp3cshw"]
 
-[ext_resource type="Script" path="res://world.gd" id="1_txxem"]
+[ext_resource type="Script" path="res://Levels/script_level_1.gd" id="1_txxem"]
 [ext_resource type="PackedScene" uid="uid://bnwwggmcdo8sm" path="res://player.tscn" id="2_17snv"]
 [ext_resource type="PackedScene" uid="uid://bdx1yhh2hfnfj" path="res://spikes.tscn" id="3_l30ab"]
 [ext_resource type="PackedScene" uid="uid://dg8yyf3bfl7rj" path="res://heart.tscn" id="4_7wy3j"]
 [ext_resource type="PackedScene" uid="uid://b618nfcmtw6cl" path="res://level_completed.tscn" id="5_0fa50"]
 [ext_resource type="PackedScene" uid="uid://b7fs1id56lku2" path="res://level_tile_map.tscn" id="6_ljwe0"]
+
+[sub_resource type="Animation" id="Animation_uwkdm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/StartIn/CenterContainer/StartInLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Start in:3"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/StartIn:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_v5pn5"]
 resource_name = "countdown"
@@ -33,33 +60,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_uwkdm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/StartIn/CenterContainer/StartInLabel:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Start in:3"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/StartIn:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3p2tr"]

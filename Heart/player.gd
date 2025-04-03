@@ -11,12 +11,8 @@ var was_wall_normal = Vector2.ZERO
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var starting_position = global_position
 @onready var wall_jump_timer = $WallJumpTimer
-var isDashing = false
-var isHanging = false
-
 
 func _physics_process(delta):
-	
 	apply_gravity(delta)
 	handle_jump()
 	handle_wall_jump()
@@ -38,35 +34,11 @@ func _physics_process(delta):
 	var just_left_wall = was_on_wall and not is_on_wall()
 	if just_left_wall:
 		wall_jump_timer.start()
-		
-	if Input.is_action_just_pressed("dash") and isDashing == false:
-		if animated_sprite_2d.flip_h:
-			velocity.x = movement_data.speed * (-3)
-			velocity.y = movement_data.speed * (-1)
-		else:
-			velocity.x = movement_data.speed * 3
-			velocity.y = movement_data.speed * (-1)
-		isDashing = true
-		
-		var dashTimer = Timer.new()
-		dashTimer.wait_time = 1
-		dashTimer.connect("timeout", func():
-			isDashing = false
-			dashTimer.queue_free())
-		add_child(dashTimer)
-		dashTimer.start()
-	
-	
-	if global_position.y>0:
-		global_position = starting_position
 	
 func apply_gravity(delta):
 	if not is_on_floor():
 		velocity.y += gravity * movement_data.gravity_scale * delta
-		if isHanging:
-			if (velocity.y>0):
-				velocity.y = 0.85 * (velocity.y)
-	
+
 func handle_wall_jump():
 	if not is_on_wall() and wall_jump_timer.time_left <= 0.0: return
 	var wall_normal = get_wall_normal()
@@ -124,15 +96,3 @@ func update_animations(input_axis):
 
 func _on_hazard_detector_area_entered(area):
 	global_position = starting_position
-	
-
-
-func _on_check_parede_body_entered(body):
-	print("Colidiu com:",body.name)
-	if body.is_in_group("parede"):
-		isHanging = true
-
-func _on_check_parede_body_exited(body):
-	print("PAROU de colidir com:",body.name)
-	if body.is_in_group("parede"):
-		isHanging = false

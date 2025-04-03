@@ -550,7 +550,7 @@ sources/0 = SubResource("TileSetAtlasSource_44obc")
 sources/1 = SubResource("TileSetAtlasSource_rg5eb")
 sources/2 = SubResource("TileSetAtlasSource_v1yt3")
 
-[node name="LevelTileMap" type="TileMap"]
+[node name="LevelTileMap" type="TileMap" groups=["parede"]]
 tile_set = SubResource("TileSet_4wbvj")
 format = 2
 layer_0/name = "Base"

@@ -10,7 +10,7 @@ func _ready():
 
 func _on_start_game_button_pressed():
 	await LevelTransition.fade_to_black()
-	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
+	get_tree().change_scene_to_file("res://level_one.tscn")
 	
 	LevelTransition.fade_from_black()
 
