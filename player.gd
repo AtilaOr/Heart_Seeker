@@ -128,7 +128,6 @@ func _on_hazard_detector_area_entered(area):
 
 
 func _on_check_parede_body_entered(body):
-	print("Colidiu com:",body.name)
 	if body.is_in_group("parede"):
 		isHanging = true
 
